@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get '/people' => "people#index" 
-
+  resources :people
   root "pages#home"
 end

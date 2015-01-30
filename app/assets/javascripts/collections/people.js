@@ -5,7 +5,7 @@ App.People = Backbone.Collection.extend({
   url: '/people',
   filterBySearch: function(searchText){
     var matchedPeople = this.filter(function(person) {
-      return person.full_name() === searchText;
+      return person.fullname().toLowerCase().indexOf(searchText.toLowerCase()) !== -1;
     });
     return new App.People(matchedPeople);
   }
